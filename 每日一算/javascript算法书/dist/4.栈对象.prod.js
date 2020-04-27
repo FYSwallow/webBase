@@ -1,0 +1,1 @@
+"use strict";function Stack(){this.dataStore=[],this.top=0}Stack.prototype.push=function(t){this.dataStore[this.top++]=t},Stack.prototype.pop=function(t){return this.dataStore[--this.pop]};
