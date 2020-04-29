@@ -1,0 +1,1 @@
+"use strict";function SuperClass(){this.superValue=!0}function SubClass(){this.subValue=!1}SuperClass.prototype.getSuperValue=function(){return!0},SubClass.proptype=new SuperClass,SubClass.proptype.getSubValue=function(){return!1};var child=new SubClass;console.dir(SubClass),console.dir(SuperClass),console.log(child.getSubValue);

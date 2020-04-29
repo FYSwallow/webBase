@@ -1,0 +1,1 @@
+"use strict";function Node(e){this.element=e,this.next=null}function LinkedList(){this.head=new Node("head")}LinkedList.proptype.find=function(e){for(var n=this.head;n.element!=e;)n=n.next;return n},LinkedList.proptype.insert=function(e,n){var t=new Node(e),i=this.find(n);t.next=i.next(),i.next=t};
