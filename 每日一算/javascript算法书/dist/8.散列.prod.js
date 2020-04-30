@@ -1,0 +1,1 @@
+"use strict";function HashTable(){this.table=new Array(137)}HashTable.prototype.simpleHash=function(t){for(var e=0,a=0;a<t.length;a++)e+=t.charCodeAt(a);return e%this.table.length};

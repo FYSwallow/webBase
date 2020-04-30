@@ -26,7 +26,7 @@ LinkedList.proptype.find = function (element) {
 LinkedList.proptype.insert = function (newElement, item) {
     let newNode = new Node(newElement);
     let current = this.find(item);
-    newNode.next = current.next();
+    newNode.next = current.next;
     current.next = newNode;
 }
 
@@ -34,7 +34,6 @@ LinkedList.proptype.insert = function (newElement, item) {
 LinkedList.proptype.display = function() {
     let currentNode = this.head;
     while(currentNode.next === null) {
-        console.log(currentNode.next)
         currentNode = currentNode.next;
     }
 }
@@ -46,7 +45,7 @@ LinkedList.proptype.display = function() {
  */
 // 查找待删除节点之前的节点
  LinkedList.proptype.findPrevious = function (item) {
-    ler currentNode = this.head;
+    let currentNode = this.head;
     while(!(currentNode.next === null) && (currentNode.next.element != iitem)) {
         currentNode = currentNode.next;
     }
@@ -83,5 +82,21 @@ LinkedList2.proptype.find = function(item) {
 
 // 插入元素
 LinkedList2.proptype.insert = function(element, item) {
-    let newNode = new Node2(newElement)
+    let newNode = new Node2(element);
+    let currentNode = this.find(item);
+    newNode.next = currentNode.next;
+    newNode.previous = currentNode;
+    currentNode.next = newNode;
 }
+// 删除节点
+LinkedList2.proptype.remove = function (item) {
+    let currentNode = this.find(item);
+    if(!(currentNode === null)) {
+        currentNode.previous.next = currentNode.next;
+        currentNode.next.previous = currentNode.previous;
+        currentNode.next === null;
+        currentNode.previous === null;
+    }
+}
+
+// 循环列表是指从最后一项节点的next指向首项
