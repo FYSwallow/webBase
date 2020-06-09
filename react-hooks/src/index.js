@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {HashRouter, Switch, Route} from 'react-router-dom'
 import * as serviceWorker from './serviceWorker';
+import UseState from './pages/useState'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <HashRouter>
+          <Switch>
+              <Route exact path='/hooks1' component={UseState}></Route>
+          </Switch>
+      </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
