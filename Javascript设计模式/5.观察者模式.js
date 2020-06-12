@@ -36,6 +36,9 @@ const Observe = (function() {
 Observe.on('say', function (data) {
     console.log(data.args.text);
 })
+Observe.on('say', function (data) {
+    console.log(data.args.text);
+})
 Observe.on('success',function () {
     console.log('success')
 });
