@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <div id="tiptext">
+    </div>
+    <div id="close">关闭</div>
+    <script>
+        let box = document.querySelector('#input')
+        let tiptext = document.querySelector('#tiptext')
+        let close = document.querySelector('#close')
+
+        // 单例模式
+        let flag = false
+        let tipShow = function (msg) {
+            if (!flag) {
+                flag = true
+                tiptext.innerHTML = msg
+            }
+        }
+
+        // 错误提示
+        var errorMsgs = {
+            default: '输入数据格式不正确',
+            minLength: '输入数据长度不足',
+            isNumber: '请输入数字',
+            required: '内容不为空'
+        };
+
+        // 规则集
+        var rules = {
+            minLength: function (value, length, errorMsg) {
+                if (value.length < length) {
+                    tipShow(errorMsg)
+                }
+            },
+            isNumber: function (value, errorMsg) {
+                if (!/\d+/.test(value)) {
+                    tipShow(errorMsg)
+                }
+            },
+            required: function (value, errorMsg) {
+                if (value === '') {
+                    tipShow(errorMsg)
+                }
+            }
+        };
+
+
+        // 添加校验规则
+        let add = function (value, rule, errorMsg) {
+            var arg = [value];
+
+            if (rule.indexOf('minLength') !== -1) {
+                var temp = rule.split(':');
+                arg.push(temp[1]);
+                rule = temp[0];
+            }
+            arg.push(errorMsg)
+            // 进行校验
+            return rules[rule].apply(this, arg);
+        }
+
+        const postData = (value) => {
+            add(value, 'isNumber', '只能为数字') // 只能为数字
+            add(value, 'required') // 内容不为空
+            add(value, 'minLength:5', '最少5位')// 最少5位
+            add(value, 'minLength:4', '最少4位')
+        }
+        box.addEventListener('blur', function () {
+            postData(box.value)
+        })
+        close.addEventListener('click', function () {
+            tiptext.innerHTML = ""
+            flag = false
+
+        })
+    </script>
+</body>
+
+</html>

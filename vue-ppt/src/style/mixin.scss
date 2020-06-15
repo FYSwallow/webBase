@@ -1,0 +1,12 @@
+
+// 使用flex布局
+@mixin fj($type: space-between) {
+    display: flex;
+    justify-content: $type;
+}
+// 使用行高居中
+@mixin hm($height) {
+    height: $height;
+    line-height: $height;
+}
+
