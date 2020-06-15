@@ -1,5 +1,7 @@
 <template>
-    <div>123</div>
+  <div class="mian-warpper">
+      <router-view/>
+  </div>
 </template>
 
 <script>
