@@ -1,7 +1,7 @@
 <template>
     <div class="header-warpper">
         <slot name="left"></slot>
-        <slot name="middle"></slot>
+        <slot name="center"></slot>
         <slot name="right"></slot>
     </div>
 </template>

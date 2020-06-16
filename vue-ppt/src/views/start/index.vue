@@ -1,12 +1,15 @@
 <template>
-    <div class="main-container">
-        导航栏
+    <div class="start-container">
+        开始
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+}
 </script>
 
 <style>
+
 </style>
