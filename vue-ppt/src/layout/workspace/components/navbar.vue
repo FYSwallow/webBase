@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import workRoutes from '../../../router/workRoute'
+import workRoutes from '@/router/workRoute'
 export default {
     data() {
         return {
@@ -25,7 +25,7 @@ export default {
 @import "../../../style/color.scss";
 
 .nav-list {
-    @include fj(start);
+    @include fj(flex-start);
     @include hm(40px);
     background-color: $darkbgc;
     li {

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import headNav from "../../components/headNav";
+import headNav from "@/components/headNav";
 import sidebar from "./components/sidebar";
 import homeMain from "./components/homeMain";
 export default {

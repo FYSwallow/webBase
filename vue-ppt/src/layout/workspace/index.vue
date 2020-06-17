@@ -14,13 +14,13 @@
         <!-- 工作区 -->
         <section class="workspace-warpper">
             <sidebar class="sidebar" @changeData="changeData"></sidebar>
-            <main-container class="workspace-main" :data="data"></main-container>
+            <main-container class="workspace-main"></main-container>
         </section>
     </div>
 </template>
 
 <script>
-import headNav from "../../components/headNav";
+import headNav from "@/components/headNav";
 import navbar from './components/navbar';
 import sidebar from './components/sidebar';
 import mainContainer from './components/main';
@@ -33,14 +33,11 @@ export default {
         mainContainer
     },
     data() {
-        return {
-            data: 0
-        }
+        return {}
     },
     methods: {
         // 更换列表
         changeData(data) {
-            console.log(data)
             this.data = data
         }
     }
