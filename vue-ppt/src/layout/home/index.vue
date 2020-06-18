@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import headNav from "../../components/headNav";
+import headNav from "@/components/headNav";
 import sidebar from "./components/sidebar";
 import homeMain from "./components/homeMain";
 export default {
@@ -31,14 +31,9 @@ export default {
     .home-warpper {
         @include fj;
         height: 100%;
-        .home-side {
-            width: 200px;
-            background-color: #f5f5f5;
-        }
         .home-main {
             flex: 1;
             min-width: 500px;
-            background-color: grey;
         }
     }
 }

@@ -1,7 +1,7 @@
 <template>
-  <div class="mian-warpper">
-      <router-view/>
-  </div>
+    <div class="table-nodata">
+        
+    </div>
 </template>
 
 <script>

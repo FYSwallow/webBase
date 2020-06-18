@@ -1,6 +1,6 @@
 <template>
-    <div class="side-bar">
-        侧边
+    <div class="start-container">
+        过渡
     </div>
 </template>
 

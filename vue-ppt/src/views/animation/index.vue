@@ -1,6 +1,6 @@
 <template>
-    <div class="side-bar">
-        记录
+    <div class="start-container">
+        动画
     </div>
 </template>
 
