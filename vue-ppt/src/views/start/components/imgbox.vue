@@ -7,6 +7,11 @@ export default {
             type: Object
         }
     },
+    methods: {
+        handleClick() {
+            console.log(123)
+        }
+    },
     render(h) {
         return h(
             `${this.detail.tag}`,
@@ -21,6 +26,9 @@ export default {
                 },
                 attrs: {
                     src: require("../../../assets/text.jpg")
+                },
+                on: {
+                    click: this.handleClick
                 }
             },
             this.$slots.default
