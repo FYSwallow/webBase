@@ -1,6 +1,6 @@
 <template>
-    <div class="table-nodata">
-        
+    <div class="app-main">
+        主体
     </div>
 </template>
 

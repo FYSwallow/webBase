@@ -1,1 +1,1 @@
-export const GET_START_SELECT_TYPE = 'GET_START_SELECT_TYPE' // 定义开始状态栏的选中状态
+export const SET_TOKEN = 'SET_TOKEN' // 定义开始状态栏的选中状态

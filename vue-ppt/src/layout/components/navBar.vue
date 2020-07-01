@@ -1,6 +1,6 @@
 <template>
-    <div class="start-container">
-        动画
+    <div class="navbar">
+        导航条
     </div>
 </template>
 

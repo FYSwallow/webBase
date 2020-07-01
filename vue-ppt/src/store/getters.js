@@ -1,4 +1,4 @@
 const getters = {
-    roles: () => ['editor']
-  }
-  export default getters
+    token: (state) => state.token
+}
+export default getters

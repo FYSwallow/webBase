@@ -1,7 +1,5 @@
 <template>
-    <div class="start-container">
-        插入
-    </div>
+    <div class="sidebar">侧边栏</div>
 </template>
 
 <script>
