@@ -7,3 +7,11 @@ export const login = (data) => {
         data
     })
 }
+
+export const getInfo = (token) => {
+    return request ({
+        url: '/userInfo',
+        method: 'post',
+        data: {token}
+    })
+}

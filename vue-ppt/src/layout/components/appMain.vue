@@ -1,6 +1,6 @@
 <template>
     <div class="app-main">
-        主体
+        <router-view/>
     </div>
 </template>
 
@@ -10,6 +10,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss' scoped>
+.app-main {
+    height: calc(100vh - 50px);
+    overflow: hidden;
+}
 
 </style>

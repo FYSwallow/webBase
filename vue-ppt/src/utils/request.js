@@ -23,6 +23,7 @@ service.interceptors.request.use(config => {
 // 响应拦截器
 service.interceptors.response.use(response => {
     const res = response.data
+    console.log(res)
     if (res.code !== 20000) {
         Message({
             message: res.message || 'error',

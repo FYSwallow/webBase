@@ -1,5 +1,7 @@
 <template>
-    <div class="sidebar">侧边栏</div>
+    <div class="form-container">
+        表单
+    </div>
 </template>
 
 <script>

@@ -45,7 +45,7 @@ export default {
             ruleForm: {
                 username: "admin",
                 password: "1231"
-            },
+            }, // 表单提交的内容
             rules: {
                 username: [
                     { required: true, tigger: "blur", validator: checkName }
@@ -53,14 +53,36 @@ export default {
                 password: [
                     { required: true, tigger: "blur", validator: checkPassword }
                 ]
-            }
+            } //校验规则
+            // redirect: undefined // 重定向
         };
+    },
+    watch: {
+        // 1.获取重定向路由方法一
+        // $route: {
+        //     // 会在侦听之后被立即调用
+        //     handler: function(route) {
+        //         console.log(route.query);
+        //         this.redirect = route.query && route.query.redirect;
+        //     },
+        //     immediate: true
+        // }
+    },
+    computed: {
+        // 1.获取重定向路由方法二
+
+        redirect: function() {
+            return this.$route.query.redirect;
+        }
+    },
+    created() {
+        console.log(this.redirect);
     },
     methods: {
         ...mapActions(["login"]),
         async submitForm() {
             await this.login(this.ruleForm);
-            this.$router.push({path: '/'})
+            this.$router.push({ path: this.redirect || "/" });
         }
     }
 };
