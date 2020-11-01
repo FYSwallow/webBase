@@ -1,21 +1,18 @@
-const {name} = require('./package')
-
-const port = 6661
+const packageName = require('./package.json').name;
 
 module.exports = {
     devServer: {
-        port,
+        port: 10000,
         // 允许被主应用跨域fetch请求到
         headers: {
-            'Access-Control-Allow-Origin':'*'
+            'Access-Control-Allow-Origin': '*'
         }
     },
     configureWebpack: {
         output: {
-            library: `${name}-[name]`,
-            // 把子应用打包成umd库格式
+            library: `${packageName}-[name]`,
             libraryTarget: 'umd',
-            jsonpFunction: `webpackJsonp_${name}`
-        }
+            jsonpFunction: `webpackJsonp_${packageName}`,
+        },
     }
 }

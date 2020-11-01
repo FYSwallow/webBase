@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 
 const routes = [
     {
-        path: '/',
+        path: '/page',
         name: 'home',
         component: Page
     },
@@ -22,4 +22,7 @@ const routes = [
     }
 ]
 
-export default routes
+const router = new VueRouter({
+    routes
+})
+export default router
