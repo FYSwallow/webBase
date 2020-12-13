@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="400" height="400" style="border: 1px solid #ccc;"></canvas>
+    <script>
+        /* 
+            变换： 是实现复杂canvas操作的最好方式。
+            修正在绘制系统中的说法是变换，再应用的时候可以随意被顺序应用，组合或者是修改。
+         */
+        function drawPicture() {
+            var canvas = document.querySelector('#mycanvas')
+            var context = canvas.getContext('2d'); //获取二维上下文
+
+            // 保存当前绘画状态
+            context.save();
+
+            // 向右下方移动绘画上下文
+            context.translate(70, 140);
+
+            // 创建路径， lineTo并非划线，结束时storke才是划线
+            context.beginPath();
+            context.moveTo(0, 0)
+            context.lineTo(70, -70)
+
+            // 绘制线条
+            context.stroke()
+
+            // 恢复原有绘画状态
+            context.restore()
+        }
+
+        window.addEventListener('load', drawPicture, true)
+    </script>
+</body>
+</html>

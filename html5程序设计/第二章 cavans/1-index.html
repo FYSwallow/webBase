@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="400" height="400" style="border: 1px solid #ccc;"></canvas>
+    <script>
+        function drawPicture() {
+            var canvas = document.querySelector('#mycanvas')
+            var context = canvas.getContext('2d'); //获取二维上下文
+
+            // 创建路径， lineTo并非划线，结束时storke才是划线
+            context.beginPath();
+            context.moveTo(70, 70)
+            context.lineTo(300, 300)
+
+            // 绘制线条
+            context.stroke()
+        }
+
+        window.addEventListener('load', drawPicture, true)
+    </script>
+</body>
+</html>

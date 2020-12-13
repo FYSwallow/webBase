@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="mycanvas" width="400" height="400" style="border: 1px solid #ccc;"></canvas>
+    <script>
+        /* 
+            变换： 是实现复杂canvas操作的最好方式。
+            修正在绘制系统中的说法是变换，再应用的时候可以随意被顺序应用，组合或者是修改。
+         */
+        function drawPicture() {
+            var canvas = document.querySelector('#mycanvas')
+            var context = canvas.getContext('2d'); //获取二维上下文
+
+            // 保存当前绘画状态
+            context.save();
+
+            // 向右下方移动绘画上下文
+            context.translate(100, 200);
+
+            createTree(context)
+            
+            drawStyle(context, 4, 'round', '#663300')
+            drawFillStyle(context, '#339900')
+            // 绘制线条
+            context.stroke()
+
+            // 恢复原有绘画状态
+            context.restore()
+        }
+
+        // 用于绘制树冠轮廓的函数
+        function createTree(context) {
+            context.beginPath()
+            context.moveTo(-25, -50)
+            context.lineTo(-10, -80)
+            context.lineTo(-20, -80)
+            context.lineTo(-5, -110)
+            context.lineTo(-15, -110)
+            context.lineTo(0, -140)
+            context.lineTo(15, -110)
+            context.lineTo(5, -110)
+            context.lineTo(20, -80)
+            context.lineTo(10, -80)
+            context.lineTo(25, -50)
+            context.closePath() //闭合路径
+        }
+
+        function drawStyle(context, lineWidth, lineJoin, storkeStyle) {
+            context.lineWidth = lineWidth
+            context.lineJoin = lineJoin
+            context.storkeStyle = storkeStyle
+        }
+        
+        function drawFillStyle( context , fillStyle) {
+            context.fillStyle = fillStyle
+            context.fill()
+        }
+        window.addEventListener('load', drawPicture, true)
+    </script>
+</body>
+</html>

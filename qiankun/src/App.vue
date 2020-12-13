@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    <el-menu default-active="/" class="el-menu-demo" mode="horizontal">
+    <el-menu default-active="/" class="el-menu-demo" mode="horizontal" :router="true">
+      <el-menu-item index="/">主应用</el-menu-item>
       <el-menu-item
         v-for="item in microApps"
         :key="item.name"
         :index="item.name"
-        @click="goto(item)"
       >{{ item.name }}</el-menu-item>
     </el-menu>
-    <div id="subapp-viewport"></div>
-    <router-view></router-view>
+    <router-view v-show="$route.name" />
+    <div id="sub-vue" v-show="!$route.name"></div>
+    <div id="sub-react" v-show="!$route.name"></div>
   </div>
 </template>
 
@@ -22,9 +23,7 @@ export default {
     };
   },
   methods: {
-    goto(item) {
-      history.pushState(null, item.activeRule, item.activeRule);
-    }
+
   }
 };
 </script>
