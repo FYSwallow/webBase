@@ -12,10 +12,6 @@ export default function UseCallback() {
         }, [count],
     )
 
-    console.log("记忆", memory())
-    console.log("num", num)
-    console.log("count", count)
-
     return (
         <div>
             <button onClick={() => { setCount(count + 1) }}>count++</button>

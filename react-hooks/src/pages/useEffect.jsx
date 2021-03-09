@@ -9,6 +9,12 @@ export default function UseEffect(props) {
      * 可以写多个useEffect, 多个hook不相互干扰
      */
     useEffect(() => {
+        console.log('不传依赖的effect');
+        return () => {
+            console.log('不传依赖的effect');
+        }
+    })
+    useEffect(() => {
         console.log('监听count项目渲染完毕');
         return () => {
             console.log('监听count项目渲染结束');
@@ -22,11 +28,10 @@ export default function UseEffect(props) {
     }, [num])
     return (
         <div>
-            {console.log('渲染')}
             <p>监听{count}次</p>
-            <div onClick={() => { setCount(count + 1) }}>+</div>
+            <button onClick={() => { setCount(count + 1) }}>+</button>
             <p>不监听{num}次</p>
-            <div onClick={() => { setNum(num + 1) }}>+</div>
+            <button onClick={() => { setNum(num + 1) }}>+</button>
         </div>
     )
 }

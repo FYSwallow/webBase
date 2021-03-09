@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Sub() {
+            this.name = '张三'
+            this.age = 10
+        }
+
+        Sub.prototype.play = function() {
+            console.log('玩')
+        }
+        function Child() {
+            Sub.call(this) //可以继承构造函数的内容
+        }
+
+        Child.prototype = new Sub()
+        Child.prototype.constructor = Child
+        console.dir(Child)
+
+        let child = new Child()
+        child.play()
+    </script>
+</body>
+</html>

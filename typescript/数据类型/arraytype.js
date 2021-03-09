@@ -1,3 +1,4 @@
+"use strict";
 /**
  * 数组类型
 */
@@ -45,3 +46,16 @@ function reload(x, y) {
 }
 console.log(reload(1, 1));
 console.log(reload(1, '王'));
+// 由于swim为Fish特有的属性,需要将参数断言为fish
+function isFish(animal) {
+    if (typeof animal.swim === 'function') {
+        return true;
+    }
+    return false;
+}
+function testAnimal(animal) {
+    return animal;
+}
+function testCat(dog) {
+    return dog;
+}

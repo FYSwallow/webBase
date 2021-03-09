@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
+import { ThemeContext } from './context/context.js'
 
-const ThemeContext = React.createContext('light') //创建一个context
 function Self() {
     return (
         <Fragment>
@@ -11,13 +11,13 @@ function Self() {
 
 class Child extends Component {
     static contextType = ThemeContext
-    render() { 
-        return ( 
+    render() {
+        return (
             <div>{this.context}</div>
-         );
+        );
     }
 }
- 
+
 export default function Context(props) {
     return (
         <ThemeContext.Provider value='dark'>
