@@ -5,6 +5,18 @@ interface CalculatorProp {
     // temperature: number
 }
 
+
+function toCelsius(fahrenheit: number): number {
+    return (fahrenheit - 32) * 5 / 9;
+}
+
+function toFahrenheit(celsius: number): number {
+    return (celsius * 9 / 5) + 32;
+}
+
+function handleChangeC() {
+    
+}
 const Calculator: FC<CalculatorProp> = ({ }): ReactElement => {
     const [temperature, setTemperature] = useState<string>('')
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
