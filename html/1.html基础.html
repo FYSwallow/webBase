@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 忽略自动识别电话 -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 忽略自动识别邮箱 -->
+    <meta name="format-detection" content="email=no">
+
+    <!-- 忽略自动识别电话和邮箱 -->
+    <meta name="format-detection" content="telephone=no, email=no">
+
     <title>Document</title>
-    <style>
-        html,body{
-            height: 200vh;
-        }
-        h1 {
-            writing-mode: vertical-lr;
-        }
-        .background {
-            height: 100vh;
-            /* background-image: url('./images/example.jpg');
-            background-repeat: no-repeat; 
-            background-position: top 10px right 20px; */
-            background-image: linear-gradient(105deg, rgba(0,249,255,1) 39%, rgba(51,56,57,1) 96%);
-            background-attachment: scroll;
-        }
-    </style>
 </head>
+
 <body>
     <h1>竖向文本</h1>
-    <div class="background">
+    <a href="tel:10086">拨打电话给10086小姐姐</a>
+    <br />
 
-    </div>
-    <figure>
-        <figcaption>prc</figcaption>
-        <p>123</p>
-        <time datatime="2010-2-23">2010年2月13日</time>
-    </figure>
+    <!-- 发送短信 -->
+    <a href="sms:10086">发送短信给10086小姐姐</a>
+    <br />
+    <!-- 发送邮件 -->
+    <a href="mailto:young.joway@aliyun.com">发送邮件给JowayYoung</a>
+    <br />
+    <!-- 选择照片或拍摄照片 -->
+    <input type="file" accept="image/*">
+    <br />
+    <!-- 选择视频或拍摄视频 -->
+    <input type="file" accept="video/*">
+    <br />
+    <!-- 多选文件 -->
+    <input type="file" multiple>
+    <br />
+
+    <!-- 纯数字带#和* -->
+    <input type="tel">
+    <br />
+
+    <!-- 纯数字 -->
+    <input type="number" pattern="\d*">
+    <br />
+    <!-- 打开微信 -->
+    <a href="weixin://">打开微信</a>
+    <br />
+
+    <!-- 打开支付宝 -->
+    <a href="alipays://">打开支付宝</a>
+    <br />
+
+    <!-- 打开支付宝的扫一扫 -->
+    <a href="alipays://platformapi/startapp?saId=10000007">打开支付宝的扫一扫</a>
+    <br />
+
+    <!-- 打开支付宝的蚂蚁森林 -->
+    <a href="alipays://platformapi/startapp?appId=60000002">打开支付宝的蚂蚁森林</a>
+    <br />
+    <img src="./images/6b3a2ec90f0af4de233be6458e0df2e.jpg" alt="">
 </body>
+
 </html>
