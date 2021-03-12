@@ -6,6 +6,7 @@ import StateUp from './pages/stateUp/index'
 import ContextDemo from './pages/context/index';
 import ContextDemoMore from './pages/moreContext/index';
 import RefsDemo from './pages/refs/index.jsx'
+import DivForm from './pages/test';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/context" component={ContextDemo}/>
                 <Route path="/contextMore" component={ContextDemoMore}/>
                 <Route path="/refsDemo" component={RefsDemo}/>
+                <Route path="/divForm" component={DivForm}/>
             </Switch>
         </HashRouter>
     );

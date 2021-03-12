@@ -1,0 +1,14 @@
+{
+  "name": "first-js",
+  "version": "1.0.0",
+  "description": "All of first",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "fy",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.21.0"
+  }
+}

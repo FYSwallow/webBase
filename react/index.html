@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="root"></div>
-    <script src="./myreact.js"></script>
+    <!-- <script src="./myreact.js"></script> -->
+    <script>
+        var tasksNum = 1000
+
+        // requestIdleCallback(unImportWork)
+
+        // function unImportWork(deadline) {
+        //     while (deadline.timeRemaining() && tasksNum > 0) {
+        //         console.log(`执行了${10000 - tasksNum + 1}个任务`)
+        //         tasksNum--
+        //     }
+
+        //     if (tasksNum > 0) { // 在未来的帧中继续执行
+        //         requestIdleCallback(unImportWork)
+        //     }
+        // }
+
+        function unImportWork2() {
+            while (tasksNum > 0) {
+                console.log(`执行了${1000 - tasksNum + 1}个任务`)
+                tasksNum--
+            }
+        }
+        unImportWork2()
+    </script>
 </body>
+
 </html>
