@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Textarea() {
+function Textarea({content}) {
+    
     return (
-        <textarea name="" id="" cols="30" rows="10">
-            哈哈哈哈
+        <textarea name="" id="" cols="30" rows="10" value={content}>
         </textarea>
     )
 }
